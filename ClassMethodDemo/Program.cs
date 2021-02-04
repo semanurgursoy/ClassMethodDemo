@@ -58,6 +58,27 @@ namespace ClassMethodDemo
             customerManager.list();
             customerManager.delete(customer2);
             customerManager.list();
+
+            Console.WriteLine("\n\n");
+
+            MyDictionary<int,string> dictionary= new MyDictionary<int, string>();
+            int key;string value;
+            dictionary.Add(customer1.Id, customer1.FirstName+" "+customer1.LastName);
+            dictionary.Add(customer2.Id, customer1.FirstName + " " + customer2.LastName);
+            dictionary.Add(customer3.Id, customer1.FirstName + " " + customer3.LastName);
+            dictionary.List();
+            Console.WriteLine("Deger ekleme islemi icin 1,devam etmek icin 2 tuslayiniz..");
+            val = Convert.ToInt16(Console.ReadLine());
+            while (val == 1) 
+            {
+                Console.WriteLine("Key ve Vaule degerlerini giriniz..");
+                key = Convert.ToInt16(Console.ReadLine());
+                value = Convert.ToString(Console.ReadLine());
+                dictionary.Add(key, value);
+                Console.WriteLine("Deger ekleme islemine devam etmek icin 1,islemden cikis yapmak icin 2 tuslayiniz..");
+                val = Convert.ToInt16(Console.ReadLine());
+            }
+            dictionary.List();
         }
     }
 }
